@@ -493,3 +493,48 @@ Linux initialization
     systemctl #systemd controller
     systemctl start <unit> #to control things #old commands are mapped
     default.target #default grouping of units
+
+X Windows
+  At the base of most/all gui systems
+  also known as xorg
+  In Sysv need to pick run level x11
+  In Systemd need to set target to graphical.target
+    systemctl set-default TARGET.target
+  yum groupinstall "X Windows System" "Desktop" "Fonts" #installs GUI with default GUI for distro
+  yum groupinstall "X Windows System" "KDE desktop" "Fonts" #installs GUI with non-default GUI #e.g. on centos
+  /etc/sysconfig/desktop #file that defines what desktop to launch
+  /etc/X11/xinit/Xclients #which interface to use #$DESKTOP variable set by user
+  
+  Xorg -configure #configures system (need to init 3)
+    Makes xorg.conf.new is best guess of configuration
+    X #launches graphical user interface
+    X -config <custom config file> #Runs against config file
+    /usr/share/X11/xorg.conf.d/ #directory for default config file
+
+  gconf-editor #useful tool for editing gdm
+  xwininfo #shows details about certain windows
+  xdpyinfo #shows all of windows configuration settings
+
+  /usr/share/config/kdm #where configuration for kdm desktop is stored
+
+  lightdm
+   /usr/share/lightdm/lightdm.conf.d/ #where config files for lightdm are kept
+   /etc/lightdm/users.conf #what users are allowed to use lightdm
+   
+   Remote Access
+     x forward across ssh tunnel
+     cygwinx - allows to run x windows from Microsoft windows
+     xhost# who is allowed to run x
+       xhost si:localuser:<username> #user allowed to run x remotely
+       configure server side
+	      xhost inet:<ip_address>:<username> #restricts by IP
+	      xhost + #turns off access-control #do not just do this!! configure IP tables to only allow SSH
+	    configure client side
+	      /etc/ssh/ssh_config #make sure ForwardX11Trusted yes is un-commeted out
+	    connect to remote server
+	      ssh -Y <username>@<server> # connect and do x-forwarding
+	      echo $Display #confirms tunneling of x-windows (anything other than :0)
+	      <program> & #runs program with display locally
+
+  Accessibility
+  	Only details how to set it up for someone else
