@@ -521,13 +521,13 @@ X Windows
    /usr/share/lightdm/lightdm.conf.d/ #where config files for lightdm are kept
    /etc/lightdm/users.conf #what users are allowed to use lightdm
    
-   Remote Access
-     x forward across ssh tunnel
-     cygwinx - allows to run x windows from Microsoft windows
-     xhost# who is allowed to run x
-       xhost si:localuser:<username> #user allowed to run x remotely
-       configure server side
-	      xhost inet:<ip_address>:<username> #restricts by IP
+  Remote Access
+    x forward across ssh tunnel
+    cygwinx - allows to run x windows from Microsoft windows
+    xhost# who is allowed to run x
+      xhost si:localuser:<username> #user allowed to run x remotely
+      configure server side
+        xhost inet:<ip_address>:<username> #restricts by IP
 	      xhost + #turns off access-control #do not just do this!! configure IP tables to only allow SSH
 	    configure client side
 	      /etc/ssh/ssh_config #make sure ForwardX11Trusted yes is un-commeted out
@@ -538,3 +538,20 @@ X Windows
 
   Accessibility
   	Only details how to set it up for someone else
+
+  Localization
+    locale #returns locale information
+    LC_ALL # Global override (usually empty)
+    LC... ="POSIX" #Minimal input
+    LC... ="C" #App to use its own
+    locale -a #returns which localizations are installed
+    yum groupinstall <language> # install locale
+    iconv #converts file from one character set to another
+    setlocale #old command #doesn't exist anymore
+    localectl set-locale <local setting>=<choice> #change locale setting #requires reboot
+    tzselect #select timezone
+    /etc/localtime #link to specific file #relink to change system wide timezone
+    hwclock #shows hardware clock
+    date -s "<date and time>" #sets software clock
+    hwclock --systohc #sets system clock to same time as hardware clock
+    hwclock --hctosys #sets hardware clock to same time as system clock
