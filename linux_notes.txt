@@ -555,3 +555,28 @@ X Windows
     date -s "<date and time>" #sets software clock
     hwclock --systohc #sets system clock to same time as hardware clock
     hwclock --hctosys #sets hardware clock to same time as system clock
+
+Users & Groups
+    /etc/paaswd #list of accounts on system
+    	: #seperate fields
+	UserIDs usually starts at 500
+	<name>:<password>:<userID>:<Group ID>:<full name>:<home directory>:<shell>
+		/sbin/logon #runs as a service account
+    	/etc/shadow #password file
+    /etc/group #groups files (some distros store this in passwd so there might not be any file)
+    useradd #add user command
+    	useradd <name> #create user with that name
+	#use all the options for account creation
+		passwd #use this command to set password not -p on useradd otherwise the password isn't encrypted
+    usermod #mod user
+    	usermod -a -G <groupname> <username> #Append group to list of groups for user
+    groups <username> #lists membership of user
+    newgrp <group> #changes default of group you're using
+    getent <group/passwd/shadow> <info> #gets info you're looking for from the files (like an auto grep)
+    chage #sets password policy
+    /etc/login.defs #defines user standard policy
+    /etc/default/useradd #defines user defaults if no options specified
+    	/etc/skel #skeleton directory (template home directory)
+    
+    
+	 
