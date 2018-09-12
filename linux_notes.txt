@@ -577,6 +577,24 @@ Users & Groups
     /etc/login.defs #defines user standard policy
     /etc/default/useradd #defines user defaults if no options specified
     	/etc/skel #skeleton directory (template home directory)
-    
-    
+
+Logging
+    Syslog
+    	#Default service
+	/var/log #where log files are stored
+	messages, dmesg #most important system logs
+	logger #able to create log messages #for tesing logging is working
+	/etc/rsyslog.conf #logging configuration
+		Contains details of remote syslog service
+			*.<service> @loghost.mydomain.com:514
+    	/etc/services #defined as 514 #only required for inbound connections
+	/etc/logrotate.conf #logrotation settings
+    syslogd
+    	#new service #not used by many systems
+	#journalling
+	/var/log/journal #present if using syslogd #create if want to do syslog journalling
+	/etc/systemd/journald.conf #settings for syslogd
+	journalctl #utility for looking at journal
+	
+	
 	 
