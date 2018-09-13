@@ -595,6 +595,21 @@ Logging
 	/var/log/journal #present if using syslogd #create if want to do syslog journalling
 	/etc/systemd/journald.conf #settings for syslogd
 	journalctl #utility for looking at journal
+
+System Time
+    date #Displays date and time info
+    /etc/timezone #
+    /etc/localtime #sym link to timezone file #change sym link to point at new zone
+    tzselect #command menu for selecting time
+    tzconfig #same as tzselect
+    date -s "<date/time>" #change time manually
+    hwclock #view/change hardware clock in system
+    hwclock --systohc #sync system clock to hardware clock
+    ntp
+    	etc/ntp.conf #ntp settings
+	    restrict #who can sync time from us
+	ntpq #query program
+	ntpq -p #ntp server information
+	ntpd -gq #synchronises time
 	
 	
-	 
