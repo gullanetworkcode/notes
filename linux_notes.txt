@@ -611,5 +611,34 @@ System Time
 	ntpq #query program
 	ntpq -p #ntp server information
 	ntpd -gq #synchronises time
+
+Scheduling Jobs
+    at #schedule a command (create at job)
+    	at 3am Friday# (then enter command that you want to run)
+	atq #lists jobs that are due to run
+	atrm <at job number> #removes at job from queue
+	# Runs under your account
+    cron #job scheduler
+    	/etc/crontab #crontable for entire system
+	/etc/cron.deny /etc/cron.allow #who can and can't run cron jobs (if neither exist only root can run cron jobs)
+		#can only use one or the other #if both exist cron.allow takes precedent
+	#add symlinks or scripts to cron.<interval> folder to get things to happen at that interval
+	crontabb
+		#edit file to schedule a job to run
+			* #means to run every interval
+	crontab -e #edit your own crontab (not system crontab)
+	/etc/cron.deny #if empty then everyone is allowed
+	crontab -l #views your own crontab
+	crontab -l -u <user> #view someone elses crontab
+	crontab -e -u <user> #edit someone elses crontable if you are root
+	/var/spool/cron/<user folder/file> #where users crontab is stored
+    anacron #catches jobs that were supposed to run when system not on #usually set to run once an hour from within cron
+    
+    
+    	
+		
 	
+	
+	
+
 	
