@@ -634,11 +634,23 @@ Scheduling Jobs
 	/var/spool/cron/<user folder/file> #where users crontab is stored
     anacron #catches jobs that were supposed to run when system not on #usually set to run once an hour from within cron
     
+Networking
+    ifconfig #interface configuration command
+    ifconfig <adapter> up <ip address> netmask <netmask> #configure ip address on adapter (not persistent)
+    ifdown <interface> #
+    ifup <interface>#
+    /etc/sysconfig/network-scripts #Redhat system network files
+    /etc/sysconfig/interfaces #Debian system network files
+    	#config files for interfaces
+	ONBOOT="<yes/no>" #Wether adapter will be up at boot up
+    chkconfig NetworkManager Off #turn off network manager (systemctl disable NetworkManager #for systemd systems)
+    	service NetworkManager stop #stops service
+    service network restart #restarts the network service
+    /etc/sysconfig/network #Add a gateway here if more than one network adapter
+    	#edit hostname here too #can be in other places too - be careful
+    /etc/resolve.conf #Where DNS servers are defined
+    	#need to restart network service
+    /etc/hosts #File with manual host entries
     
-    	
-		
-	
-	
-	
-
-	
+    
+    
