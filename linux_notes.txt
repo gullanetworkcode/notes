@@ -46,6 +46,7 @@ Updates/Packages
   	yum remove <package>  #doesn't remove dependencies
   	yum groupinstall <software_group>  #install group of software (e.g. SQL Server)
   	yum grouplist
+	yum provides <program> #lookis in packages for tools that don't have own package (e.g. ifconfig)
     Repositories - /etc/yum.repos.d
       Can create repo files for new repositories (edited text in file)
       Keys required from developer (rpm -i-import <key>)
@@ -650,7 +651,12 @@ Networking
     	#edit hostname here too #can be in other places too - be careful
     /etc/resolve.conf #Where DNS servers are defined
     	#need to restart network service
+	order files,dns,nis #change order of name lookups #showing default order
     /etc/hosts #File with manual host entries
-    
-    
+    route -n #lists routing table
+    netstat -atp #shows connections (and app that is using that connection)
+    ip addr #lists layer3 addresses for interfaces
+    ip link #shows link status
+    ip -s link#shows statistics for link
+    nc <hostname> <port> #connect to server on specified port #netcat
     
