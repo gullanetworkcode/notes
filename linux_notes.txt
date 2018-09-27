@@ -660,3 +660,8 @@ Networking
     ip -s link#shows statistics for link
     nc <hostname> <port> #connect to server on specified port #netcat
     
+Customising Shell
+    /etc/profile #default user profile
+    home/.bashrc #bash configuration file
+    	#Can add peristent alias here etc
+	
