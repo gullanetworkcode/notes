@@ -732,7 +732,10 @@ Printers and Printing
     LPDEST=<printer name> #set default printer
     cancel <job number> #remove print job
     
+Securing Administration
+    ---s #permission to run program as owner of command #setuid #be careful!!
+    find / -perm +4000 #search for things with setuid
+    service --status-all | grep iptables #check to see if local firewall is running
+    nmap <ip address> #able to scan system for open ports
+    ulimit #create user limits
     
-    
-    
-	
