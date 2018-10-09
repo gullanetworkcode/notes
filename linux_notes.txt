@@ -688,6 +688,17 @@ Writing Scripts (bash)
 	done
     #test command
     	test <command> && <action if true> || <action if false>
+
+Email
+    MTA #Message transfer agent e.g. SMTP
+    MUA #Mail user agent e.g. pop3, IMAP4
+    sendmail #common MTA on most distros #not used much anymore as security flaws.
+    postfix #compatible with sendmail but more secure
+    /etc/postfix/main.cf #main configuration file
+    /var/spool/ #where mailboxes are by default
+    mail #command line mail client #not user friendly
+    dovecote #most common IMAP server
+    squirrelmail #webmail
+    roundcube #another web based mail client
     
-	
     
