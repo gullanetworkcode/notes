@@ -721,6 +721,18 @@ SQL
     SELECT <table.column>, <table.column> FROM <table> JOIN <other table> on <table.column>=<other table.column> #join command
     UPDATE <table> SET <header>='new_value' WHERE <header> = <value>; #change a value in a database
     
+Printers and Printing
+    CUPS #Common unix printing system
+    service --status-all | grep cups #see if CUPS is already running
+    ppd file #can be extracted from driver file from manufacturer website
+    /etc/cups/ppd/ #folder where to put the drivers (or symlink - be careful of permissions, better to copy)
+    lpadmin -h <host> -p <name> -E -v <how to connect (socket://<ip address)> -P <ppd file location> # add printer
+    lp -d <printer name> <file> #print a file #lpr is bsd command
+    lpstat -p <printer name> #show status of print job #lpq (BSD)
+    LPDEST=<printer name> #set default printer
+    cancel <job number> #remove print job
+    
+    
     
     
 	
