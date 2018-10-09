@@ -665,3 +665,29 @@ Customising Shell
     home/.bashrc #bash configuration file
     	#Can add peristent alias here etc
 	
+Writing Scripts (bash)
+    .sh #conventional suffix to identify it is a script
+    #!/bin/bash #identifies it as a shell script #needs to be at top of file
+    #need to change permissions to be execute #chmod 755
+    echo #prints out text in shell
+    echo -e #no new line
+    read <variable> #wait for user to type something and store in variable
+    $<variable> #calls variable in that script
+    if else#conditionals
+    #for loop
+    	for <variable> in 'seq <number>'
+    	do
+    	    <command> $<variable>
+    	done
+    #while loop
+    	<variable>=<number>
+	while [ <variable -gt 0 ]
+	do
+	    <command> $<variable>
+	    <variable>=$(($variable -1))
+	done
+    #test command
+    	test <command> && <action if true> || <action if false>
+    
+	
+    
