@@ -701,4 +701,26 @@ Email
     squirrelmail #webmail
     roundcube #another web based mail client
     
+SQL
+    MariaDB #replacement for MYSQL #both not supported on all distros
+    #Server and client both needed
+    Secure the service!!
+    	systemctl start mariadb #Start the service
+	/usr/bin/mysql_secure_installation #script to secure system
+    mysql -u <user> -p #log into mariadb shell
+    SHOW DATABASES; #run command #; needed to indicate end of command
+    DROP DATABASE <database>; #removes database
+    CREATE DATABASE <name>; #creates new database
+    USE <database>; #Switch to issuing commands against different database
+    CREATE TABLE <name> (columns definition) #create table
+    INSERT INTO <table> (Columns) VALUES (<values>), (<values>); #create values in table
+    SELECT * FROM <table>; #get all data from table
+    SELECT * FROM <table> WHERE <?row header> LIKE <value>; #return values matching the data
+    SELECT * FROM <table> WHERE <?row header> LIKE 'S%'; #returns data which starts with an S
+    SELECT <columns> FROM <table> WHERE <?row header> LIKE 'S%'; #returns the data from only the columns specified
+    SELECT <table.column>, <table.column> FROM <table> JOIN <other table> on <table.column>=<other table.column> #join command
+    UPDATE <table> SET <header>='new_value' WHERE <header> = <value>; #change a value in a database
     
+    
+    
+	
