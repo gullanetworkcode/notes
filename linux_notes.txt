@@ -772,3 +772,7 @@ Securing Data with SSH
     /etc/ssh/ssh_known_hosts #shared known hosts file #only root can change
     ssh-keyscan <host> >> ./known_hosts #populate local file with remote key
     
+SSH Tunnelling
+    ssh -f <username@server> -L <local_port_number>:<remote_ip_address>:<app_port_number> -N #redirect app traffic over ssh tunnel to remote system
+    	#connect to 127.0.0.1 <local_port_number> to use tunnel
+    
