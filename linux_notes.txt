@@ -738,4 +738,21 @@ Securing Administration
     service --status-all | grep iptables #check to see if local firewall is running
     nmap <ip address> #able to scan system for open ports
     ulimit #create user limits
+    /etc/security/limits.conf #where to store persistent limits
+    su #change to other user, usually root #Just for that shell
+    sudo
+    	#users need to be authorized
+	visudo #edit sudo configuration #/etc/sudousers
+		#can specify where people can use sudo from
+		#can specify what commands users can use
+	#wheel group is standard config
+    service --status-all #lists all services running #turn off unused ones
+    xinetd #insecure service
+    	/etc/xinetd.conf #config file for xinet.d #turn of unsed functions #disable
+    TCP Wrapper
+    	#use .allow and .deny files
+    	ldd /<library> | grep wrap #determine if service uses tcp wrapper
+	
+	
+	
     
