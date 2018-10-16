@@ -763,4 +763,12 @@ GPG
     gpg --encrypt -r <username of user data is for> <file_to_encrypt> #encrypt a file using public key #creates <file_name>.gpg file
     gpg <file_name> #Decrypts file
     
+Securing Data with SSH
+    /etc/sysconfig/iptables #config for iptables
+    ssh <username>@<server_name> #connect to remote system
+    /etc/ssh #where ssh keys are stored
+    /home/.ssh/known_hosts #where ssh keys are stored for remote systems
+    ssh-keyscan 127.0.0.1 #shows public key representation
+    /etc/ssh/ssh_known_hosts #shared known hosts file #only root can change
+    ssh-keyscan <host> >> ./known_hosts #populate local file with remote key
     
