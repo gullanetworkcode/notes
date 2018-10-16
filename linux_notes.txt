@@ -753,6 +753,14 @@ Securing Administration
     	#use .allow and .deny files
     	ldd /<library> | grep wrap #determine if service uses tcp wrapper
 	
-	
-	
+GPG
+    #GNU Privacy Guard #open source version of PGP
+    gpg #runs startup wizard
+    gpg --gen-key #creates new key
+    gpg --export --output <output_file> #exports public key
+    gpg --import <import_file> #import public key for use
+    gpg --list-key #keys in database
+    gpg --encrypt -r <username of user data is for> <file_to_encrypt> #encrypt a file using public key #creates <file_name>.gpg file
+    gpg <file_name> #Decrypts file
+    
     
