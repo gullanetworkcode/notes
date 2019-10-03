@@ -1,0 +1,9 @@
+    - name: Configure snmp-server
+      ios_config:
+        running_config: "{{ running_snmp_server_config.stdout[0] }}"
+        lines: "{{ ios_snmp_server }}"
+        match: exact
+        replace: block
+        before: "{{ no_running_snmp_server_config }}"
+      notify: 
+        - handler_ios_save_Config
