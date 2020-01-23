@@ -1,0 +1,17 @@
+Blocks can be used to lump tasks together e.g. have a few tasks and one 'when' conditional.
+  Can also be used for graceful of error handling in tasks using "rescue" and "always" sections.
+  https://www.jeffgeerling.com/blog/new-features-ansible-20-blocks
+
+changed_when:
+  can be used to specify when something has actually changed.
+  Useful for when you run a command rather than a module as running a command will always show as changed unless using "changed_when"
+  use of "not" can be useful here
+
+failed_when:
+  can be used to specify when something has actually failed
+  Useful when using commands rather than running a module
+  Use of "not" here can make sure anything that is unexpected is treated as an error
+  https://alexecollins.com/ansible-shell-module/
+
+Vault
+	ansible-vault view foo.yml #to view contents of vault file
