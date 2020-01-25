@@ -62,6 +62,7 @@ GIT Notes
     git checkout <branch_name> #move to branch for working on
     git push origin <branch_name> #Sync branch to remote repo
     git branch -d  <branch> #delete branch (locally) #remember to delete on remote
+      git push origin -d <branch> #deletes remote branch
 
   Merging
     git merge <branch> #merges from specified branch into current branch
