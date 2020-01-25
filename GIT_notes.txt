@@ -40,7 +40,10 @@ GIT Notes
       #deletes local file too
     git rm --cached <file> #remove file from staging
     git rm --cached -r <folder> #remove sub folder from staging
-    git checkout -- <file> #discard any changes
+    git checkout -- <file> #discard any changes (for unstaged files)
+    git reset HEAD <file> #moves file from staged to unstaged
+    git log (to get commit ID)
+      git reset (first few unique characters (7)from commit ID)
     git reset --hard #discards changes #avoid using if possible
 
   Connecting to remote repo
